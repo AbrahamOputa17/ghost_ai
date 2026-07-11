@@ -9,21 +9,25 @@ change.
 
 ## Current Goal
 
-- Install and configure shadcn/ui, add the requested UI primitives, and keep them aligned with the dark theme.
+- Implement core layout components for the editor screen (top navbar and animate-left sidebar) and set up the dialog pattern according to page specifications.
 
 ## Completed
 
 - Cleaned up Next.js boilerplate (stripped globals.css, deleted SVGs, and verified page.tsx is minimal).
-
+- Set up git repository and pushed initial commit to remote origin (`https://github.com/AbrahamOputa17/ghost_ai.git`).
+- Installed shadcn/ui tab and dialog primitives.
+- Built the Editor Navbar component (`components/editor/editor-navbar.tsx`).
+- Built the Project Sidebar component (`components/editor/project-sidebar.tsx`) with overlay/slide-in animation and tab/placeholder structures.
+- Integrated the navbar and sidebar into the interactive editor shell layout in `app/page.tsx`.
 
 ## In Progress
 
-- Read repo instructions and design-system spec.
-- Preparing shadcn/ui installation and component generation.
+- None (Phase 2 core layout components are completed and verified).
+
 
 ## Next Up
 
-- Configure shadcn/ui and add Button, Card, Dialog, Input, Tabs, Textarea, and ScrollArea.
+- Finish building shadcn primitives for subsequent feature specs (Card, Input, Textarea, ScrollArea, etc.).
 
 ## Open Questions
 
