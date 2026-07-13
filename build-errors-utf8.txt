@@ -1,0 +1,324 @@
+﻿
+> ghost-ai@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.2.10 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+node.exe : 
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (:  
+  String) [], RemoteExc   
+ eption
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+> Build error occurred
+Error: Turbopack build 
+failed with 4 errors:
+./components/editor/editor
+-navbar.tsx:5:1
+Export SignedIn doesn't 
+exist in target module
+  [90m3 |[0m 
+[36mimport[0m { 
+[33mPanelLeftOpen[0m, 
+[33mPanelLeftClose[0m } 
+[36mfrom[0m 
+[32m"lucide-react"[0m;
+  [90m4 |[0m 
+[36mimport[0m { 
+[33mButton[0m } 
+[36mfrom[0m [32m"@/comp
+onents/ui/button"[0m;
+[31m[1m>[0m [90m5 
+|[0m [36mimport[0m { 
+[33mUserButton[0m, 
+[33mSignInButton[0m, 
+[33mSignedIn[0m, 
+[33mSignedOut[0m } 
+[36mfrom[0m 
+[32m"@clerk/nextjs"[0m;
+  [90m  |[0m [31m[1m^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^[
+0m
+  [90m6 |[0m
+  [90m7 |[0m 
+[36minterface[0m [33mEd
+itorNavbarProps[0m {
+  [90m8 |[0m   
+isSidebarOpen: boolean;
+
+The export SignedIn was 
+not found in module [proje
+ct]/node_modules/@clerk/ne
+xtjs/dist/esm/index.js 
+[app-client] (ecmascript).
+Did you mean to import 
+SignIn?
+All exports of the module 
+are statically known (It 
+doesn't have dynamic 
+exports). So it's known 
+statically that the 
+requested export doesn't 
+exist.
+
+Import traces:
+  Client Component 
+Browser:
+    ./components/editor/ed
+itor-navbar.tsx [Client 
+Component Browser]
+    ./app/editor/page.tsx 
+[Client Component Browser]
+    ./app/editor/page.tsx 
+[Server Component]
+
+  Client Component SSR:
+    ./components/editor/ed
+itor-navbar.tsx [Client 
+Component SSR]
+    ./app/editor/page.tsx 
+[Client Component SSR]
+    ./app/editor/page.tsx 
+[Server Component]
+
+
+./components/editor/editor
+-navbar.tsx:5:1
+Export SignedIn doesn't 
+exist in target module
+  [90m3 |[0m 
+[36mimport[0m { 
+[33mPanelLeftOpen[0m, 
+[33mPanelLeftClose[0m } 
+[36mfrom[0m 
+[32m"lucide-react"[0m;
+  [90m4 |[0m 
+[36mimport[0m { 
+[33mButton[0m } 
+[36mfrom[0m [32m"@/comp
+onents/ui/button"[0m;
+[31m[1m>[0m [90m5 
+|[0m [36mimport[0m { 
+[33mUserButton[0m, 
+[33mSignInButton[0m, 
+[33mSignedIn[0m, 
+[33mSignedOut[0m } 
+[36mfrom[0m 
+[32m"@clerk/nextjs"[0m;
+  [90m  |[0m [31m[1m^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^[
+0m
+  [90m6 |[0m
+  [90m7 |[0m 
+[36minterface[0m [33mEd
+itorNavbarProps[0m {
+  [90m8 |[0m   
+isSidebarOpen: boolean;
+
+The export SignedIn was 
+not found in module [proje
+ct]/node_modules/@clerk/ne
+xtjs/dist/esm/index.js 
+[app-ssr] (ecmascript).
+Did you mean to import 
+SignIn?
+All exports of the module 
+are statically known (It 
+doesn't have dynamic 
+exports). So it's known 
+statically that the 
+requested export doesn't 
+exist.
+
+Import traces:
+  Client Component 
+Browser:
+    ./components/editor/ed
+itor-navbar.tsx [Client 
+Component Browser]
+    ./app/editor/page.tsx 
+[Client Component Browser]
+    ./app/editor/page.tsx 
+[Server Component]
+
+  Client Component SSR:
+    ./components/editor/ed
+itor-navbar.tsx [Client 
+Component SSR]
+    ./app/editor/page.tsx 
+[Client Component SSR]
+    ./app/editor/page.tsx 
+[Server Component]
+
+
+./components/editor/editor
+-navbar.tsx:5:1
+Export SignedOut doesn't 
+exist in target module
+  [90m3 |[0m 
+[36mimport[0m { 
+[33mPanelLeftOpen[0m, 
+[33mPanelLeftClose[0m } 
+[36mfrom[0m 
+[32m"lucide-react"[0m;
+  [90m4 |[0m 
+[36mimport[0m { 
+[33mButton[0m } 
+[36mfrom[0m [32m"@/comp
+onents/ui/button"[0m;
+[31m[1m>[0m [90m5 
+|[0m [36mimport[0m { 
+[33mUserButton[0m, 
+[33mSignInButton[0m, 
+[33mSignedIn[0m, 
+[33mSignedOut[0m } 
+[36mfrom[0m 
+[32m"@clerk/nextjs"[0m;
+  [90m  |[0m [31m[1m^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^[
+0m
+  [90m6 |[0m
+  [90m7 |[0m 
+[36minterface[0m [33mEd
+itorNavbarProps[0m {
+  [90m8 |[0m   
+isSidebarOpen: boolean;
+
+The export SignedOut was 
+not found in module [proje
+ct]/node_modules/@clerk/ne
+xtjs/dist/esm/index.js 
+[app-client] (ecmascript).
+Did you mean to import 
+SignOutButton?
+All exports of the module 
+are statically known (It 
+doesn't have dynamic 
+exports). So it's known 
+statically that the 
+requested export doesn't 
+exist.
+
+Import traces:
+  Client Component 
+Browser:
+    ./components/editor/ed
+itor-navbar.tsx [Client 
+Component Browser]
+    ./app/editor/page.tsx 
+[Client Component Browser]
+    ./app/editor/page.tsx 
+[Server Component]
+
+  Client Component SSR:
+    ./components/editor/ed
+itor-navbar.tsx [Client 
+Component SSR]
+    ./app/editor/page.tsx 
+[Client Component SSR]
+    ./app/editor/page.tsx 
+[Server Component]
+
+
+./components/editor/editor
+-navbar.tsx:5:1
+Export SignedOut doesn't 
+exist in target module
+  [90m3 |[0m 
+[36mimport[0m { 
+[33mPanelLeftOpen[0m, 
+[33mPanelLeftClose[0m } 
+[36mfrom[0m 
+[32m"lucide-react"[0m;
+  [90m4 |[0m 
+[36mimport[0m { 
+[33mButton[0m } 
+[36mfrom[0m [32m"@/comp
+onents/ui/button"[0m;
+[31m[1m>[0m [90m5 
+|[0m [36mimport[0m { 
+[33mUserButton[0m, 
+[33mSignInButton[0m, 
+[33mSignedIn[0m, 
+[33mSignedOut[0m } 
+[36mfrom[0m 
+[32m"@clerk/nextjs"[0m;
+  [90m  |[0m [31m[1m^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^[
+0m
+  [90m6 |[0m
+  [90m7 |[0m 
+[36minterface[0m [33mEd
+itorNavbarProps[0m {
+  [90m8 |[0m   
+isSidebarOpen: boolean;
+
+The export SignedOut was 
+not found in module [proje
+ct]/node_modules/@clerk/ne
+xtjs/dist/esm/index.js 
+[app-ssr] (ecmascript).
+Did you mean to import 
+SignOutButton?
+All exports of the module 
+are statically known (It 
+doesn't have dynamic 
+exports). So it's known 
+statically that the 
+requested export doesn't 
+exist.
+
+Import traces:
+  Client Component 
+Browser:
+    ./components/editor/ed
+itor-navbar.tsx [Client 
+Component Browser]
+    ./app/editor/page.tsx 
+[Client Component Browser]
+    ./app/editor/page.tsx 
+[Server Component]
+
+  Client Component SSR:
+    ./components/editor/ed
+itor-navbar.tsx [Client 
+Component SSR]
+    ./app/editor/page.tsx 
+[Client Component SSR]
+    ./app/editor/page.tsx 
+[Server Component]
+
+
+    at <unknown> (./compon
+ents/editor/editor-navbar.
+tsx:5:1)
+    at <unknown> (./compon
+ents/editor/editor-navbar.
+tsx:5:1)
+    at <unknown> (./compon
+ents/editor/editor-navbar.
+tsx:5:1)
+    at <unknown> (./compon
+ents/editor/editor-navbar.
+tsx:5:1)

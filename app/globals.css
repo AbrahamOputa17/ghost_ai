@@ -1,1 +1,24 @@
 @import "tailwindcss";
+@import "@clerk/ui/themes/shadcn.css";
+
+@theme {
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-primary: var(--accent-primary);
+  --color-border-default: var(--border-default);
+  --color-state-error: var(--state-error);
+  --color-state-success: var(--state-success);
+}
+
+:root {
+  --bg-base: #09090b;
+  --bg-surface: #0f0f12;
+  --text-primary: #fafafa;
+  --text-muted: #a1a1aa;
+  --accent-primary: #2dd4bf;
+  --border-default: #27272a;
+  --state-error: #ef4444;
+  --state-success: #10b981;
+}
