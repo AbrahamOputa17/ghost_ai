@@ -9,7 +9,7 @@ change.
 
 ## Current Goal
 
-- Implement core layout components for the editor screen (top navbar and animate-left sidebar) and set up the dialog pattern according to page specifications.
+- Build remaining shadcn primitives for subsequent feature specs (Card, Input, Textarea, ScrollArea, etc.)
 
 ## Completed
 
@@ -19,15 +19,24 @@ change.
 - Built the Editor Navbar component (`components/editor/editor-navbar.tsx`).
 - Built the Project Sidebar component (`components/editor/project-sidebar.tsx`) with overlay/slide-in animation and tab/placeholder structures.
 - Integrated the navbar and sidebar into the interactive editor shell layout in `app/page.tsx`.
+- **[03-auth] Clerk authentication fully wired:**
+  - `proxy.ts` middleware protects all routes; public routes: `/sign-in(.*)`, `/sign-up(.*)`.
+  - `ClerkProvider` wraps root layout with `dark` theme (`@clerk/ui/themes`) + CSS variable overrides for brand colours.
+  - Design system colour tokens defined in `globals.css` as `:root` CSS vars (`--bg-base`, `--accent-primary: #2dd4bf`, etc.).
+  - `localization` prop on `ClerkProvider` renames "My Application" to "Ghost AI".
+  - Sign-in/sign-up pages: premium two-panel layout — left branding panel (logo, headline, 3 Lucide icon features), right Clerk form.
+  - `UserButton` in editor navbar via `Show when="signed-in"`, `SignInButton` via `Show when="signed-out"`.
+  - `npm run build` **passes cleanly** (exit code 0).
+- **[04-project-dialog]** Editor home screen + Create / Rename / Delete project dialogs + sidebar item actions with mobile backdrop scrim.
 
 ## In Progress
 
-- None (Phase 2 core layout components are completed and verified).
-
+- (none)
 
 ## Next Up
 
-- Finish building shadcn primitives for subsequent feature specs (Card, Input, Textarea, ScrollArea, etc.).
+- Finish building shadcn primitives for subsequent feature specs (Card, Input, Textarea, ScrollArea, etc.)
+- Canvas / editor main area
 
 ## Open Questions
 
@@ -35,9 +44,14 @@ change.
 
 ## Architecture Decisions
 
-- [Decisions made that affect the system design or
-  data model — include why the decision was made]
+- Editor shell lives at `/editor` (not `/`). Root `/` is a server redirect based on auth state.
+- Clerk auth pages use `@clerk/ui` dark theme with CSS variable overrides for brand colours (`--accent-primary: #2dd4bf`, etc.).
+- `proxy.ts` is used as middleware (not `middleware.ts`) per feature spec requirement.
 
 ## Session Notes
 
-- [Context needed to resume work in the next session]
+- `@clerk/nextjs` v7 (this version) does **not** export `SignedIn`/`SignedOut` from the client bundle. Use `Show when="signed-in|signed-out"` instead.
+- `ClerkProvider appearance` takes `{ theme: dark }` (import `dark` from `@clerk/ui/themes`) — not `baseTheme`.
+- Valid v7 `appearance.variables` keys: `colorPrimary`, `colorBackground`, `colorInput`, `colorForeground`, `colorMutedForeground`, `colorBorder`, `colorInputForeground`.
+- `@theme` in `globals.css` produces a lint warning in some editors but is valid Tailwind v4 syntax — safe to ignore.
+- Build confirmed passing (exit code 0) on 2026-07-13.
