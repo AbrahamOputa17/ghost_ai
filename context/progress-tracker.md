@@ -27,6 +27,7 @@ change.
   - Sign-in/sign-up pages: premium two-panel layout — left branding panel (logo, headline, 3 Lucide icon features), right Clerk form.
   - `UserButton` in editor navbar via `Show when="signed-in"`, `SignInButton` via `Show when="signed-out"`.
   - `npm run build` **passes cleanly** (exit code 0).
+- **[04-project-dialog]** Editor home screen + Create / Rename / Delete project dialogs + sidebar item actions with mobile backdrop scrim.
 
 ## In Progress
 

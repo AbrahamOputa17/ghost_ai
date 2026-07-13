@@ -1,11 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import { Plus } from "lucide-react";
 import { EditorNavbar } from "@/components/editor/editor-navbar";
 import { ProjectSidebar } from "@/components/editor/project-sidebar";
+import {
+  CreateProjectDialog,
+  RenameProjectDialog,
+  DeleteProjectDialog,
+} from "@/components/editor/project-dialogs";
+import { useProjectDialogs } from "@/hooks/use-project-dialogs";
+import { Button } from "@/components/ui/button";
 
 export default function EditorPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const {
+    projects,
+    openDialog,
+    targetProject,
+    isLoading,
+    createName,
+    setCreateName,
+    createSlug,
+    renameName,
+    setRenameName,
+    openCreate,
+    openRename,
+    openDelete,
+    closeDialog,
+    handleCreate,
+    handleRename,
+    handleDelete,
+  } = useProjectDialogs();
 
   return (
     <div className="relative flex flex-col h-screen w-screen overflow-hidden bg-zinc-950 text-zinc-100 select-none">
@@ -21,27 +48,62 @@ export default function EditorPage() {
         <ProjectSidebar
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
+          projects={projects}
+          onCreateProject={openCreate}
+          onRenameProject={openRename}
+          onDeleteProject={openDelete}
         />
 
-        {/* Editor Main Canvas */}
-        <main className="flex-1 flex items-center justify-center bg-zinc-900 transition-all duration-300">
-          <div className="text-center p-8 bg-zinc-950/40 border border-zinc-800/50 rounded-2xl max-w-sm backdrop-blur-sm shadow-xl">
-            <h1 className="text-xl font-bold tracking-tight text-zinc-100 mb-2">
-              ghost AI
+        {/* Editor Home Canvas */}
+        <main className="flex-1 flex items-center justify-center bg-zinc-900">
+          <div className="flex flex-col items-center gap-4 text-center px-6">
+            <h1 className="text-2xl font-semibold tracking-tight text-zinc-100">
+              Create a project or open an existing one
             </h1>
-            <p className="text-xs text-zinc-400 leading-relaxed">
-              Press the menu toggle icon in the top left navbar or click below
-              to view/hide your projects list.
+            <p className="text-sm text-zinc-400 max-w-xs leading-relaxed">
+              Start a new architecture workspace, or choose a project from the
+              sidebar.
             </p>
-            <button
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="mt-4 px-3.5 py-1.5 bg-zinc-800 hover:bg-zinc-700 active:scale-95 text-xs text-zinc-200 border border-zinc-700/50 rounded-lg transition-all cursor-pointer"
+            <Button
+              onClick={openCreate}
+              className="mt-2 flex items-center gap-2 bg-zinc-100 text-zinc-950 hover:bg-zinc-200 border-none cursor-pointer"
+              size="lg"
             >
-              Toggle Projects Sidebar
-            </button>
+              <Plus className="size-4" />
+              New Project
+            </Button>
           </div>
         </main>
       </div>
+
+      {/* Dialogs */}
+      <CreateProjectDialog
+        open={openDialog === "create"}
+        name={createName}
+        slug={createSlug}
+        isLoading={isLoading}
+        onNameChange={setCreateName}
+        onSubmit={handleCreate}
+        onClose={closeDialog}
+      />
+
+      <RenameProjectDialog
+        open={openDialog === "rename"}
+        currentName={targetProject?.name ?? ""}
+        renameName={renameName}
+        isLoading={isLoading}
+        onRenameChange={setRenameName}
+        onSubmit={handleRename}
+        onClose={closeDialog}
+      />
+
+      <DeleteProjectDialog
+        open={openDialog === "delete"}
+        projectName={targetProject?.name ?? ""}
+        isLoading={isLoading}
+        onConfirm={handleDelete}
+        onClose={closeDialog}
+      />
     </div>
   );
 }
