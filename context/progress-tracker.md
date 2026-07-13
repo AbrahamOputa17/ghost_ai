@@ -28,6 +28,12 @@ change.
   - `UserButton` in editor navbar via `Show when="signed-in"`, `SignInButton` via `Show when="signed-out"`.
   - `npm run build` **passes cleanly** (exit code 0).
 - **[04-project-dialog]** Editor home screen + Create / Rename / Delete project dialogs + sidebar item actions with mobile backdrop scrim.
+- **[05-prism] Prisma Schema And Data Layer:**
+  - Configured project folder structure with multi-file Prisma schemas (`prismaSchemaFolder` pattern natively supported in Prisma 7).
+  - Created `prisma/models/project.prisma` containing `Project` and `ProjectCollaborator` models with all specified fields, enums, relations, cascade deletes, and indexes.
+  - Developed cached dynamic singleton `lib/prisma.ts` which automatically branches database adapters: using Prisma Accelerate (`accelerateUrl`) if URL starts with `prisma+postgres://`, or direct PostgreSQL connector `@prisma/adapter-pg` with `pg` client pools otherwise.
+  - Successfully connected to a local running PostgreSQL instance (creating the database `ghost_ai`), created the initial migrations, generated the client, and verified types.
+  - Successfully completed `npm run build` with type validation passing.
 
 ## In Progress
 

@@ -1,0 +1,12 @@
+// schema.prisma — generator and datasource blocks only.
+// Model definitions live in prisma/models/project.prisma.
+// Prisma 7 auto-discovers all *.prisma files in this folder.
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
